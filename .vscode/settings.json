@@ -1,0 +1,296 @@
+{
+  "typescript.preferences.includePackageJsonAutoImports": "on",
+  "files.associations": {
+    "*.js": "javascript",
+    "*.ts": "typescript"
+  },
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/dist": true,
+    "**/coverage": true,
+    "**/.git": true
+  },
+  "files.exclude": {
+    "**/node_modules": true,
+    "**/dist": true,
+    "**/coverage": true
+  },
+  "typescript.suggest.autoImports": true,
+  "javascript.suggest.autoImports": true,
+  "eslint.workingDirectories": [
+    "."
+  ],
+  "eslint.validate": [
+    "javascript",
+    "typescript"
+  ],
+  // 기본 에디터 설정 (글로벌 설정과 통일)
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.detectIndentation": false,
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "editor.renderWhitespace": "boundary",
+  "[javascript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  // 개발 서버 설정
+  "liveServer.settings.port": 5500,
+  "liveServer.settings.root": "/dist",
+  // ============================================================================
+  // 📝 TODO & COMMENTS - 할일 및 주석 설정 (FE 개발자 최적화)
+  // ============================================================================
+  // Todo Tree 설정 (사이드바 전용, 향상된 시각적 구분)
+  "todo-tree.general.tags": [
+    "TODO",
+    "FIXME",
+    "BUG",
+    "HACK",
+    "NOTE",
+    "REVIEW",
+    "OPTIMIZE",
+    "DEPRECATED",
+    "REFACTOR",
+    "COMPLEXITY",
+    "TEST"
+  ],
+  "todo-tree.general.statusBar": "total",
+  "todo-tree.general.statusBarClickBehaviour": "cycle",
+  "todo-tree.highlights.enabled": true,
+  "todo-tree.highlights.highlightDelay": 500,
+  "todo-tree.highlights.customHighlight": {
+    "TODO": {
+      "icon": "checklist",
+      "iconColour": "#FFA500",
+      "foreground": "#FFA500",
+      "type": "tag"
+    },
+    "FIXME": {
+      "icon": "flame",
+      "iconColour": "#FF4444",
+      "foreground": "#FF4444",
+      "type": "tag"
+    },
+    "BUG": {
+      "icon": "bug",
+      "iconColour": "#DC3545",
+      "foreground": "#DC3545",
+      "type": "tag"
+    },
+    "HACK": {
+      "icon": "tools",
+      "iconColour": "#FF8C00",
+      "foreground": "#FF8C00",
+      "type": "tag"
+    },
+    "NOTE": {
+      "icon": "note",
+      "iconColour": "#17A2B8",
+      "foreground": "#17A2B8",
+      "type": "tag"
+    },
+    "REVIEW": {
+      "icon": "eye",
+      "iconColour": "#9966CC",
+      "foreground": "#9966CC",
+      "type": "tag"
+    },
+    "OPTIMIZE": {
+      "icon": "rocket",
+      "iconColour": "#28A745",
+      "foreground": "#28A745",
+      "type": "tag"
+    },
+    "DEPRECATED": {
+      "icon": "circle-slash",
+      "iconColour": "#808080",
+      "foreground": "#808080",
+      "type": "tag"
+    },
+    "REFACTOR": {
+      "icon": "gear",
+      "iconColour": "#6F42C1",
+      "foreground": "#6F42C1",
+      "type": "tag"
+    },
+    "COMPLEXITY": {
+      "icon": "graph",
+      "iconColour": "#E83E8C",
+      "foreground": "#E83E8C",
+      "type": "tag"
+    },
+    "TEST": {
+      "icon": "beaker",
+      "iconColour": "#FD7E14",
+      "foreground": "#FD7E14",
+      "type": "tag"
+    }
+  },
+  "todo-tree.tree.hideTreeWhenEmpty": false,
+  "todo-tree.tree.showCountsInTree": true,
+  "todo-tree.tree.labelFormat": "${tag} ${after}",
+  "todo-tree.tree.disableCompactFolders": true,
+  "todo-tree.filtering.excludeGlobs": [
+    "**/node_modules/**",
+    "**/dist/**",
+    "**/build/**",
+    "**/.git/**",
+    "**/coverage/**"
+  ],
+  "todo-tree.filtering.includeGlobs": [
+    "**/*.vue",
+    "**/*.ts",
+    "**/*.js",
+    "**/*.tsx",
+    "**/*.jsx",
+    "**/*.scss",
+    "**/*.css",
+    "**/*.html"
+  ],
+  // Better Comments 설정 (전체 색상 제어, 최적화된 색상)
+  "better-comments.multilineComments": true,
+  "better-comments.highlightPlainText": false,
+  "better-comments.tags": [
+    {
+      "tag": "!",
+      "color": "#FF4444",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": true,
+      "italic": false
+    },
+    {
+      "tag": "?",
+      "color": "#3498DB",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": true
+    },
+    {
+      "tag": "*",
+      "color": "#28A745",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": true,
+      "italic": false
+    },
+    {
+      "tag": "TODO",
+      "color": "#FFA500",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": true,
+      "italic": false
+    },
+    {
+      "tag": "FIXME",
+      "color": "#FF4444",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": true,
+      "italic": false
+    },
+    {
+      "tag": "BUG",
+      "color": "#DC3545",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": true,
+      "italic": false
+    },
+    {
+      "tag": "NOTE",
+      "color": "#17A2B8",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": true
+    },
+    {
+      "tag": "REVIEW",
+      "color": "#9966CC",
+      "strikethrough": false,
+      "underline": true,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "OPTIMIZE",
+      "color": "#28A745",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "DEPRECATED",
+      "color": "#808080",
+      "strikethrough": true,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": true
+    },
+    {
+      "tag": "HACK",
+      "color": "#FF8C00",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "REFACTOR",
+      "color": "#6F42C1",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": true,
+      "italic": false
+    },
+    {
+      "tag": "COMPLEXITY",
+      "color": "#E83E8C",
+      "strikethrough": false,
+      "underline": true,
+      "backgroundColor": "transparent",
+      "bold": true,
+      "italic": false
+    },
+    {
+      "tag": "TEST",
+      "color": "#FD7E14",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "#FFF3E0",
+      "bold": true,
+      "italic": false
+    },
+    {
+      "tag": "//",
+      "color": "#6C757D",
+      "strikethrough": true,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    }
+  ],
+}

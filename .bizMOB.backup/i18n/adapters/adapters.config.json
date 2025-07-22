@@ -1,0 +1,66 @@
+{
+  "adapters": {
+    "vue": {
+      "name": "VueI18nAdapter",
+      "file": "vue-adapter.ts",
+      "framework": "vue",
+      "dependencies": ["vue-i18n"],
+      "optionalDependencies": [],
+      "environments": ["browser", "ssr"],
+      "bundlers": ["vite", "webpack"],
+      "description": "Vue 3 i18n adapter using vue-i18n"
+    },
+    "react": {
+      "name": "ReactI18nAdapter",
+      "file": "react-adapter.ts",
+      "framework": "react",
+      "dependencies": [],
+      "optionalDependencies": ["i18next", "react-i18next"],
+      "environments": ["browser", "ssr"],
+      "bundlers": ["vite", "webpack", "rollup"],
+      "description": "React i18n adapter with optional i18next support"
+    },
+    "vanilla": {
+      "name": "VanillaI18nAdapter",
+      "file": "vanilla-adapter.ts",
+      "framework": "vanilla",
+      "dependencies": [],
+      "optionalDependencies": [],
+      "environments": ["browser", "node", "ssr"],
+      "bundlers": ["vite", "webpack", "rollup", "esbuild"],
+      "description": "Vanilla JavaScript i18n adapter (fallback)"
+    },
+    "next": {
+      "name": "NextI18nAdapter",
+      "file": "next-adapter.ts",
+      "framework": "next",
+      "dependencies": ["next"],
+      "optionalDependencies": ["next-i18next", "i18next"],
+      "environments": ["browser", "ssr"],
+      "bundlers": ["webpack"],
+      "description": "Next.js i18n adapter with SSR support"
+    },
+    "nuxt": {
+      "name": "NuxtI18nAdapter",
+      "file": "nuxt-adapter.ts",
+      "framework": "nuxt",
+      "dependencies": ["nuxt"],
+      "optionalDependencies": ["@nuxtjs/i18n", "vue-i18n"],
+      "environments": ["browser", "ssr"],
+      "bundlers": ["vite", "webpack"],
+      "description": "Nuxt.js i18n adapter with SSR support"
+    },
+    "svelte": {
+      "name": "SvelteI18nAdapter",
+      "file": "svelte-adapter.ts",
+      "framework": "svelte",
+      "dependencies": ["svelte"],
+      "optionalDependencies": ["svelte-i18n"],
+      "environments": ["browser", "ssr"],
+      "bundlers": ["vite", "webpack", "rollup"],
+      "description": "Svelte i18n adapter"
+    }
+  },
+  "detectionOrder": ["next", "nuxt", "vue", "react", "svelte", "vanilla"],
+  "fallbackAdapter": "vanilla"
+}
