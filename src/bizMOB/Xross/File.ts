@@ -33,7 +33,7 @@ export default class File {
     return new Promise(resolve => {
       window.bizMOB.File.copy({
         ...arg,
-        _fCallback: function (res: any) {
+        _fCallback: function(res: any) {
           resolve(res);
         }
       });
@@ -72,7 +72,7 @@ export default class File {
     return new Promise(resolve => {
       window.bizMOB.File.directory({
         ...arg,
-        _fCallback: function (res: any) {
+        _fCallback: function(res: any) {
           resolve(res);
         }
       });
@@ -146,7 +146,7 @@ export default class File {
     return new Promise(resolve => {
       window.bizMOB.File.download({
         ...arg,
-        _fCallback: function (res: any) {
+        _fCallback: function(res: any) {
           resolve(res);
         }
       });
@@ -184,7 +184,7 @@ export default class File {
     return new Promise(resolve => {
       window.bizMOB.File.exist({
         ...arg,
-        _fCallback: function (res: any) {
+        _fCallback: function(res: any) {
           resolve(res);
         }
       });
@@ -237,7 +237,7 @@ export default class File {
     return new Promise(resolve => {
       window.bizMOB.File.getInfo({
         ...arg,
-        _fCallback: function (res: any) {
+        _fCallback: function(res: any) {
           resolve(res);
         }
       });
@@ -279,7 +279,7 @@ export default class File {
     return new Promise(resolve => {
       window.bizMOB.File.move({
         ...arg,
-        _fCallback: function (res: any) {
+        _fCallback: function(res: any) {
           resolve(res);
         }
       });
@@ -318,7 +318,7 @@ export default class File {
     return new Promise(resolve => {
       window.bizMOB.File.open({
         ...arg,
-        _fCallback: function (res: any) {
+        _fCallback: function(res: any) {
           resolve(res);
         }
       });
@@ -367,7 +367,7 @@ export default class File {
     return new Promise(resolve => {
       window.bizMOB.File.remove({
         ...arg,
-        _fCallback: function (res: any) {
+        _fCallback: function(res: any) {
           resolve(res);
         }
       });
@@ -423,14 +423,14 @@ export default class File {
     _sTargetDirectory: string, // 리사이즈 파일 경로
     _nCompressRate: number, // 파일 축소 비율
     _nWidth: number, // width 변경 값
-    _nFileSize: number, // 리사이즈 된 파일 용량의 최대값 (bytes)
     _nHeight: number, // height 변경 값
+    _nFileSize: number, // 리사이즈 된 파일 용량의 최대값 (bytes)
     _bMock?: boolean, // Mock 데이터 사용 여부
   }): Promise<Record<string, any>> {
     return new Promise(resolve => {
       window.bizMOB.File.resizeImage({
         ...arg,
-        _fCallback: function (res: any) {
+        _fCallback: function(res: any) {
           resolve(res);
         }
       });
@@ -472,7 +472,7 @@ export default class File {
     return new Promise(resolve => {
       window.bizMOB.File.rotateImage({
         ...arg,
-        _fCallback: function (res: any) {
+        _fCallback: function(res: any) {
           resolve(res);
         }
       });
@@ -512,7 +512,7 @@ export default class File {
     return new Promise(resolve => {
       window.bizMOB.File.unzip({
         ...arg,
-        _fCallback: function (res: any) {
+        _fCallback: function(res: any) {
           resolve(res);
         }
       });
@@ -573,7 +573,7 @@ export default class File {
     return new Promise(resolve => {
       window.bizMOB.File.upload({
         ...arg,
-        _fCallback: function (res: any) {
+        _fCallback: function(res: any) {
           resolve(res);
         }
       });
@@ -612,7 +612,7 @@ export default class File {
     return new Promise(resolve => {
       window.bizMOB.File.zip({
         ...arg,
-        _fCallback: function (res: any) {
+        _fCallback: function(res: any) {
           resolve(res);
         }
       });

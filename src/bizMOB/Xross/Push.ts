@@ -35,7 +35,7 @@ export default class Push {
     return new Promise(resolve => {
       window.bizMOB.Push.getAlarm({
         ...arg,
-        _fCallback: function (res: any) {
+        _fCallback: function(res: any) {
           resolve(res);
         }
       });
@@ -86,7 +86,7 @@ export default class Push {
     return new Promise(resolve => {
       window.bizMOB.Push.getMessageList({
         ...arg,
-        _fCallback: function (res: any) {
+        _fCallback: function(res: any) {
           resolve(res);
         }
       });
@@ -129,7 +129,7 @@ export default class Push {
     return new Promise(resolve => {
       window.bizMOB.Push.getPushKey({
         ...arg,
-        _fCallback: function (res: any) {
+        _fCallback: function(res: any) {
           resolve(res);
         }
       });
@@ -174,7 +174,7 @@ export default class Push {
     return new Promise(resolve => {
       window.bizMOB.Push.getUnreadCount({
         ...arg,
-        _fCallback: function (res: any) {
+        _fCallback: function(res: any) {
           resolve(res);
         }
       });
@@ -225,7 +225,7 @@ export default class Push {
     return new Promise(resolve => {
       window.bizMOB.Push.readMessage({
         ...arg,
-        _fCallback: function (res: any) {
+        _fCallback: function(res: any) {
           resolve(res);
         }
       });
@@ -287,7 +287,7 @@ export default class Push {
     return new Promise(resolve => {
       window.bizMOB.Push.readReceiptMessage({
         ...arg,
-        _fCallback: function (res: any) {
+        _fCallback: function(res: any) {
           resolve(res);
         }
       });
@@ -333,7 +333,7 @@ export default class Push {
     return new Promise(resolve => {
       window.bizMOB.Push.registerToServer({
         ...arg,
-        _fCallback: function (res: any) {
+        _fCallback: function(res: any) {
           resolve(res);
         }
       });
@@ -360,7 +360,7 @@ export default class Push {
   static reset(): Promise<Record<string, any>> {
     return new Promise(resolve => {
       window.bizMOB.Push.reset({
-        _fCallback: function (res: any) {
+        _fCallback: function(res: any) {
           resolve(res);
         }
       });
@@ -428,7 +428,7 @@ export default class Push {
     return new Promise(resolve => {
       window.bizMOB.Push.sendMessage({
         ...arg,
-        _fCallback: function (res: any) {
+        _fCallback: function(res: any) {
           resolve(res);
         }
       });
@@ -472,7 +472,7 @@ export default class Push {
     return new Promise(resolve => {
       window.bizMOB.Push.setAlarm({
         ...arg,
-        _fCallback: function (res: any) {
+        _fCallback: function(res: any) {
           resolve(res);
         }
       });
@@ -505,7 +505,7 @@ export default class Push {
     return new Promise(resolve => {
       window.bizMOB.Push.setBadgeCount({
         ...arg,
-        _fCallback: function (res: any) {
+        _fCallback: function(res: any) {
           resolve(res);
         }
       });

@@ -26,7 +26,7 @@ export default class App {
     return new Promise(resolve => {
       window.bizMOB.App.callPlugIn(api, {
         ...arg,
-        callback: function (res: any) {
+        callback: function(res: any) {
           resolve(res);
         }
       });
@@ -66,7 +66,7 @@ export default class App {
     return new Promise(resolve => {
       window.bizMOB.App.exit({
         ...arg,
-        _fCallback: function (res: any) {
+        _fCallback: function(res: any) {
           resolve(res);
         }
       });
@@ -103,7 +103,7 @@ export default class App {
     return new Promise(resolve => {
       window.bizMOB.App.getTimeout({
         ...arg,
-        _fCallback: function (res: any) {
+        _fCallback: function(res: any) {
           resolve(res);
         }
       });
@@ -151,7 +151,7 @@ export default class App {
     return new Promise(resolve => {
       window.bizMOB.App.setTimeout({
         ...arg,
-        _fCallback: function (res: any) {
+        _fCallback: function(res: any) {
           resolve(res);
         }
       });
@@ -183,7 +183,7 @@ export default class App {
   static hideSplash() {
     return new Promise(resolve => {
       window.bizMOB.App.hideSplash({
-        _fCallback: function (res: any) {
+        _fCallback: function(res: any) {
           resolve(res);
         }
       });

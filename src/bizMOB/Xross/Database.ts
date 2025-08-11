@@ -46,7 +46,7 @@ export default class Database {
     return new Promise(resolve => {
       window.bizMOB.Database.beginTransaction({
         ...arg,
-        _fCallback: function (res: any) {
+        _fCallback: function(res: any) {
           resolve(res);
         }
       });
@@ -88,7 +88,7 @@ export default class Database {
     return new Promise(resolve => {
       window.bizMOB.Database.closeDatabase({
         ...arg,
-        _fCallback: function (res: any) {
+        _fCallback: function(res: any) {
           resolve(res);
         }
       });
@@ -122,7 +122,7 @@ export default class Database {
     return new Promise(resolve => {
       window.bizMOB.Database.commitTransaction({
         ...arg,
-        _fCallback: function (res: any) {
+        _fCallback: function(res: any) {
           resolve(res);
         }
       });
@@ -170,7 +170,7 @@ export default class Database {
     return new Promise(resolve => {
       window.bizMOB.Database.executeBatchSql({
         ...arg,
-        _fCallback: function (res: any) {
+        _fCallback: function(res: any) {
           resolve(res);
         }
       });
@@ -232,7 +232,7 @@ export default class Database {
     return new Promise(resolve => {
       window.bizMOB.Database.executeSelect({
         ...arg,
-        _fCallback: function (res: any) {
+        _fCallback: function(res: any) {
           resolve(res);
         }
       });
@@ -300,7 +300,7 @@ export default class Database {
     return new Promise(resolve => {
       window.bizMOB.Database.executeSql({
         ...arg,
-        _fCallback: function (res: any) {
+        _fCallback: function(res: any) {
           resolve(res);
         }
       });
@@ -350,7 +350,7 @@ export default class Database {
     return new Promise(resolve => {
       window.bizMOB.Database.openDatabase({
         ...arg,
-        _fCallback: function (res: any) {
+        _fCallback: function(res: any) {
           resolve(res);
         }
       });
@@ -407,7 +407,7 @@ export default class Database {
     return new Promise(resolve => {
       window.bizMOB.Database.rollbackTransaction({
         ...arg,
-        _fCallback: function (res: any) {
+        _fCallback: function(res: any) {
           resolve(res);
         }
       });

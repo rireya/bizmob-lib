@@ -82,7 +82,7 @@ export default class Contacts {
     return new Promise(resolve => {
       window.bizMOB.Contacts.get({
         ...arg,
-        _fCallback: function (res: any) {
+        _fCallback: function(res: any) {
           resolve(res);
         }
       });

@@ -19,7 +19,7 @@ export default class System {
     return new Promise(resolve => {
       window.bizMOB.System.callBrowser({
         ...arg,
-        _fCallback: function (res: any) {
+        _fCallback: function(res: any) {
           resolve(res);
         }
       });
@@ -60,7 +60,7 @@ export default class System {
     return new Promise(resolve => {
       window.bizMOB.System.callCamera({
         ...arg,
-        _fCallback: function (res: any) {
+        _fCallback: function(res: any) {
           resolve(res);
         }
       });
@@ -111,7 +111,7 @@ export default class System {
     return new Promise(resolve => {
       window.bizMOB.System.callGallery({
         ...arg,
-        _fCallback: function (res: any) {
+        _fCallback: function(res: any) {
           resolve(res);
         }
       });
@@ -146,7 +146,7 @@ export default class System {
     return new Promise(resolve => {
       window.bizMOB.System.callMap({
         ...arg,
-        _fCallback: function (res: any) {
+        _fCallback: function(res: any) {
           resolve(res);
         }
       });
@@ -184,7 +184,7 @@ export default class System {
     return new Promise(resolve => {
       window.bizMOB.System.callSMS({
         ...arg,
-        _fCallback: function (res: any) {
+        _fCallback: function(res: any) {
           resolve(res);
         }
       });
@@ -219,7 +219,7 @@ export default class System {
     return new Promise(resolve => {
       window.bizMOB.System.callTEL({
         ...arg,
-        _fCallback: function (res: any) {
+        _fCallback: function(res: any) {
           resolve(res);
         }
       });
@@ -254,7 +254,7 @@ export default class System {
     return new Promise(resolve => {
       window.bizMOB.System.getGPS({
         ...arg,
-        _fCallback: function (res: any) {
+        _fCallback: function(res: any) {
           resolve(res);
         }
       });

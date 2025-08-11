@@ -28,10 +28,15 @@ export default class Network {
    *
    */
   static changeLocale(arg: {
-    _sLocaleCd: string, // 언어코드
+    _sLocaleCd: string, // 언어코드 (ko, en, ...)
     _bMock?: boolean, // Mock 데이터 사용 여부
   }): Promise<Record<string, any>> {
-    return window.bizMOB.Network.changeLocale(arg);
+    return new Promise(resolve => {
+      window.bizMOB.Network.changeLocale({
+        ...arg,
+        _fCallback: (res: any) => resolve(res)
+      });
+    });
   }
 
   /**
@@ -104,7 +109,14 @@ export default class Network {
     _nTimeout?: number, // 타임아웃 시간 (sec 단위)
     _bMock?: boolean, // Mock 데이터 사용 여부
   }): Promise<Record<string, any>> {
-    return window.bizMOB.Network.requestLogin(arg);
+    return new Promise(resolve => {
+      window.bizMOB.Network.requestLogin({
+        ...arg,
+        _fCallback: function(res: any) {
+          resolve(res);
+        }
+      });
+    });
   }
 
   /**
@@ -163,7 +175,14 @@ export default class Network {
     _nTimeout?: number, // 타임아웃 시간 (sec 단위)
     _bMock?: boolean, // Mock 데이터 사용 여부
   }): Promise<Record<string, any>> {
-    return window.bizMOB.Network.requestTr(arg);
+    return new Promise(resolve => {
+      window.bizMOB.Network.requestTr({
+        ...arg,
+        _fCallback: function(res: any) {
+          resolve(res);
+        }
+      });
+    });
   }
 
   /**
@@ -209,7 +228,7 @@ export default class Network {
     return new Promise(resolve => {
       window.bizMOB.Network.requestHttp({
         ...arg,
-        _fCallback: function (res: any) {
+        _fCallback: function(res: any) {
           resolve(res);
         }
       });
@@ -268,7 +287,7 @@ export default class Network {
     return new Promise(resolve => {
       window.bizMOB.Http.request({
         ...arg,
-        _fCallback: function (res: any) {
+        _fCallback: function(res: any) {
           resolve(res);
         }
       });

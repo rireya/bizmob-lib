@@ -32,7 +32,7 @@ export default class Window {
     return new Promise(resolve => {
       window.bizMOB.Window.openSignPad({
         ...arg,
-        _fCallback: function (res: any) {
+        _fCallback: function(res: any) {
           resolve(res);
         }
       });
@@ -72,7 +72,7 @@ export default class Window {
     return new Promise(resolve => {
       window.bizMOB.Window.openCodeReader({
         ...arg,
-        _fCallback: function (res: any) {
+        _fCallback: function(res: any) {
           resolve(res);
         }
       });
@@ -106,7 +106,7 @@ export default class Window {
     return new Promise(resolve => {
       window.bizMOB.Window.openFileExplorer({
         ...arg,
-        _fCallback: function (res: any) {
+        _fCallback: function(res: any) {
           resolve(res);
         }
       });
@@ -139,7 +139,7 @@ export default class Window {
     return new Promise(resolve => {
       window.bizMOB.Window.openImageViewer({
         ...arg,
-        _fCallback: function (res: any) {
+        _fCallback: function(res: any) {
           resolve(res);
         }
       });
