@@ -63,7 +63,7 @@ export default class Properties {
    * @example
    * import { Properties } from '@bizMOB';
    * // 기본 값 저장
-   * bProperties.set({
+   * Properties.set({
    *   _sKey: 'user.settings.theme',
    *   _vValue: 'dark'
    * });

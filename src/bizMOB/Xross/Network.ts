@@ -82,7 +82,6 @@ export default class Network {
    *   _sUserId: 'user@example.com',   // 레거시 시스템용
    *   _sPassword: encryptPassword('mypassword123'),  // 레거시 시스템용
    *   _oBody: { userId: 'test', password: 'password123' }, // bizMOB 시스템용
-   *   _sTrcode: 'LOGIN'
    * });
    *
    * if (loginResult.header.result) {
@@ -172,7 +171,7 @@ export default class Network {
    *
    * @param {Object} arg - HTTP 요청 설정 객체
    * @param {string} arg._sUrl - 서버 URL
-   * @param {string} arg._sMethod - 통신 방식 (get, post)
+   * @param {string} arg._sMethod - 통신 방식 (GET, POST)
    * @param {Object} [arg._oHeader] - Http Header
    * @param {Object} [arg._oBody] - Http Body
    * @param {string} [arg._sQuery] - 쿼리 스트링 (URL 파라미터)
@@ -231,7 +230,7 @@ export default class Network {
    * @param {Object} [arg._oBody] - Http Body
    * @param {Object} [arg._oOption] - fetch 옵션 객체 (추가 fetch 설정)
    * @param {number} [arg._nTimeout=60] - (default: 60) 서버에 통신 요청시 timeout 시간 (sec)
-   * @param {number} [arg._nRetries=1] API 요청 재시도 횟수 (기본값: 1회)
+   * @param {number} [arg._nRetries=1] (default: 1) API 요청 재시도 횟수 
    * @returns {Promise<{
    *   ok: boolean,        // 요청 성공 여부 (HTTP 200-299 범위)
    *   status: number,     // HTTP 상태 코드 (200, 404, 500 등)
@@ -251,7 +250,7 @@ export default class Network {
    * });
    *
    * if (usersResult.ok) {
-   *   console.log('게시글 생성 성공:', response.data);
+   *   console.log('게시글 생성 성공:', usersResult.data);
    * } else {
    *   console.log('게시글 생성 실패');
    * }

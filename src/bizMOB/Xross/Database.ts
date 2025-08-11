@@ -134,7 +134,7 @@ export default class Database {
    * 
    * @param {Object} arg - 배치 SQL 실행 설정 객체
    * @param {string} arg._sQuery - 실행할 SQL 쿼리문 (배치 처리용)
-   * @param {Array} [arg._aBindingValues] - 쿼리문의 각 변수 위치에 대입해줄 값의 배열.
+   * @param {Array} [arg._aBindingValues] - 쿼리문의 각 변수 위치에 대입해줄 값의 배열
    * @param {boolean} [arg._bMock=false] - Mock 데이터 사용 여부 (개발용)
    * @returns {Promise<{
    *   result: boolean,              // SQL쿼리문 일괄 실행 결과 값
@@ -148,8 +148,8 @@ export default class Database {
    * @example
    * import { Database } from '@bizMOB';
    * // 여러 사용자 정보를 한 번에 삽입
-   * var insertQuery = 'INSERT INTO users (name, email, department, created_at) VALUES (?, ?, ?, DATETIME("now"))';
-   * var userList = [
+   * const insertQuery = 'INSERT INTO users (name, email, department, created_at) VALUES (?, ?, ?, DATETIME("now"))';
+   * const userList = [
    *   ['김철수', 'kim@company.com', '개발팀'],
    *   ['이영희', 'lee@company.com', '디자인팀'],
    *   ['박민수', 'park@company.com', '기획팀']
@@ -182,7 +182,7 @@ export default class Database {
    *
    * @param {Object} arg - SELECT 쿼리 실행 설정 객체
    * @param {string} arg._sQuery - 실행할 SELECT SQL 쿼리문
-   * @param {Array} [arg._aBindingValues] - 쿼리문의 각 변수 위치에 대입해줄 값의 배열.
+   * @param {Array} [arg._aBindingValues] - 쿼리문의 각 변수 위치에 대입해줄 값의 배열
    * @param {boolean} [arg._bMock=false] - Mock 데이터 사용 여부 (개발용)
    * @returns {Promise<{
    *   result: boolean,               // SELECT SQL쿼리문 실행 결과 값
@@ -244,7 +244,7 @@ export default class Database {
    * 
    * @param {Object} arg - SQL 쿼리 실행 설정 객체
    * @param {string} arg._sQuery - 실행할 SQL 쿼리문 (INSERT, UPDATE, DELETE 등)
-   * @param {Array} [arg._aBindingValues] - 쿼리문의 각 변수 위치에 대입해줄 값의 배열.
+   * @param {Array} [arg._aBindingValues] - 쿼리문의 각 변수 위치에 대입해줄 값의 배열
    * @param {boolean} [arg._bMock=false] - Mock 데이터 사용 여부 (개발용)
    * @returns {Promise<{
    *   result: boolean,               // SQL 쿼리문 실행 결과 값
@@ -311,7 +311,7 @@ export default class Database {
    * DataBase Open
    * 
    * @param {Object} arg - 데이터베이스 오픈 설정 객체
-   * @param {string} arg._sDbName - 오픈할 데이터베이스 명.
+   * @param {string} arg._sDbName - 오픈할 데이터베이스 명
    * @param {boolean} [arg._bMock=false] - Mock 데이터 사용 여부 (개발용)
    * @returns {Promise<{
    *   result: boolean,               // 데이터베이스 오픈 결과 값
@@ -384,7 +384,7 @@ export default class Database {
    *     _aBindingValues: ['123']
    *   });
    *
-   *   if (balanceCheck._oData.rows[0].balance < 0) {
+   *   if (balanceCheck.data.result_set.rows[0].balance < 0) {
    *     // 잔액 부족 시 롤백
    *     const rollbackResult = await Database.rollbackTransaction();
    *     if (!rollbackResult.result) {

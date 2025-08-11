@@ -9,7 +9,7 @@ export default class Storage {
    * @example
    * import { Storage } from '@bizMOB';
    * // 기본 사용법
-   * var userData = Storage.get({ _sKey: 'user_info' });
+   * const userData = Storage.get({ _sKey: 'user_info' });
    * if (userData) {
    *   console.log('사용자 정보:', userData);
    * }

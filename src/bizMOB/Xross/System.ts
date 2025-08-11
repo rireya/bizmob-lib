@@ -1,6 +1,6 @@
 export default class System {
   /**
-   * 단말기 설치된 브라우져 열기
+   * 단말기 설치된 브라우저 열기
    *
    * @param {Object} arg - 브라우저 호출 설정 객체
    * @param {string} arg._sURL - 호출할 URL
@@ -31,7 +31,7 @@ export default class System {
    * @param {Object} arg - 카메라 촬영 설정 객체
    * @param {string} [arg._sFileName] - 찍은 이미지를 저장할 이름
    * @param {string} [arg._sDirectory] - 찍은 이미지를 저장할 경로
-   * @param {boolean} arg._bAutoVerticalHorizontal - (Default : true) 찍은 이미지를 화면에 맞게 자동으로 회전시켜 저장할지를 설정 값
+   * @param {boolean} arg._bAutoVerticalHorizontal - (Default : true) 찍은 이미지를 화면에 맞게 자동으로 회전시켜 저장할지에 대한 설정 값
    * @param {boolean} [arg._bMock=false] - Mock 데이터 사용 여부 (개발용)
    * @returns {Promise<{
    *   result: boolean,   // 성공 여부
@@ -71,7 +71,7 @@ export default class System {
    * 단말기 디바이스의 갤러리(사진앨범) 보기
    *
    * @param {Object} arg - 갤러리 호출 설정 객체
-   * @param {string} arg._sType String (Default : all) 갤러리에서 불러올 미디어 타입( all, image, video )가 있습니다.
+   * @param {string} arg._sType (Default : all) 갤러리에서 불러올 미디어 타입( all, image, video )가 있습니다.
    * @param {number} [arg._nMaxCount] - 선택 가능 개수
    * @param {boolean} [arg._bMock=false] - Mock 데이터 사용 여부 (개발용)
    * @returns {Promise<{
@@ -121,7 +121,7 @@ export default class System {
   /**
    * 단말기 지도 실행
    *
-   * @param {Object} arg - 갤러리 지도 실행 객체
+   * @param {Object} arg - 지도 실행 객체
    * @param {string} arg._sLocation 위치 정보(주소, 위경도값)
    * @param {boolean} [arg._bMock=false] - Mock 데이터 사용 여부 (개발용)
    * @returns {Promise<{
@@ -195,7 +195,7 @@ export default class System {
    * 전화걸기
    *
    * @param {Object} arg - 전화걸기 실행 객체
-   * @param {String} arg._sNumber 전화번호
+   * @param {string} arg._sNumber 전화번호
    * @param {boolean} [arg._bMock=false] - Mock 데이터 사용 여부 (개발용)
    * @returns {Promise<{
    *   result: boolean,  // 성공 여부
@@ -203,8 +203,8 @@ export default class System {
    * }>} 전화걸기 결과를 담은 Promise 객체
    * @example
    * import { System } from '@bizMOB';
-   * // 여러 수신자에게 문자 발송
-   * const tellResult = awaitSystem.callTEL({
+   * // 전화걸기
+   * const tellResult = await System.callTEL({
    *   _sNumber: '01012345678'
    * });
    *

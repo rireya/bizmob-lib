@@ -57,9 +57,9 @@ export default class Window {
    *   console.log('스캔된 코드:', scanResult.result_value);
    *
    *   // URL인 경우 브라우저로 열기
-   *   if (response.result_value.startsWith('http')) {
+   *   if (scanResult.result_value.startsWith('http')) {
    *     System.callBrowser({
-   *       _sURL: response.result_value
+   *       _sURL: scanResult.result_value
    *     });
    *   }
    * } else {

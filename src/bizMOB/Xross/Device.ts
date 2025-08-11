@@ -31,9 +31,9 @@ export default class Device {
    * @property {string} app_key 앱 고유 키 - 애플리케이션을 식별하는 고유한 키값
    * @property {string} [push_key] 푸시 키 - 푸시 서비스를 위한 고유 키값 (bizMOB.Push.getPushKey() 호출 후 설정됨)
    * @property {boolean} release_flag 릴리즈 모드 여부 - true(운영환경), false(개발환경)
-   * @property {string} push_provider_type 푸시 제공 서버(APNS혹은 GCM)
+   * @property {string} push_provider_type 푸시 제공 서버(APNS 혹은 GCM)
    * @property {string} locale 국가 정보
-   * @property {string} web_log_level 웹 로그레벨
+   * @property {string} web_log_level 웹 로그 레벨
    * @property {string} language 언어 코드
    * @property {string} carrier_code 국가코드 + 통신사코드
    * @example

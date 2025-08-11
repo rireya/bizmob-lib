@@ -329,7 +329,7 @@ export default class File {
    * 파일 삭제
    *
    * @param {Object} arg - 파일 삭제 설정 객체
-   * @param {string[]} arg._aSourcePath - 삭제할 파일 경로 목록
+   * @param {array} arg._aSourcePath - 삭제할 파일 경로 목록
    * @param {boolean} [arg._bMock=false] - Mock 데이터 사용 여부 (개발용)
    * @returns {Promise<{
    *   result: boolean,      // 전체 삭제 성공 여부
@@ -380,12 +380,12 @@ export default class File {
    * @param {Object} arg - 이미지 리사이징 설정 객체
    * @param {Array<Object>} arg._aFileList - 리사이징할 이미지 파일 목록
    * @param {string} arg._aFileList[]._sSourcePath - 원본 이미지 파일 경로
-   * @param {boolean} arg._bIsCopy - (Default : false) 원본 파일 유지 여부. (true 또는 false)
-   * @param {string} arg._sTargetDirectory - _bIsCopy가 true일 경우 복사본이 저장될 디렉토리 경로.
+   * @param {boolean} arg._bIsCopy - (Default : false) 원본 파일 유지 여부 (true 또는 false)
+   * @param {string} arg._sTargetDirectory - _bIsCopy가 true일 경우 복사본이 저장될 디렉토리 경로
    * @param {number} arg._nCompressRate - Number X (Default : 1.0) 파일의 압축률 값( 0.0부터 1.0까지 값 지정가능 )
    * @param {number} arg._nFileSize - 리사이즈 된 파일 용량의 최대값 (bytes)
-   * @param {number} arg._nWidth - 파일의 가로 크기를 설정.
-   * @param {number} arg._nHeight - 파일의 세로 크기를 설정.
+   * @param {number} arg._nWidth - 파일의 가로 크기
+   * @param {number} arg._nHeight - 파일의 세로 크기
    * @param {boolean} [arg._bMock=false] - Mock 데이터 사용 여부 (개발용)
    * @returns {Promise<{
    *   result: boolean,           // 전체 리사이즈 성공 여부
@@ -441,8 +441,8 @@ export default class File {
    * 이미지 파일 회전
    * 
    * @param {Object} arg - 이미지 회전 설정 객체
-   * @param {string} arg._sSourcePath - 이미지 File Path.
-   * @param {string} arg._sTargetPath - 회전된 이미지가 저장될 Path.
+   * @param {string} arg._sSourcePath - 이미지 File Path
+   * @param {string} arg._sTargetPath - 회전된 이미지가 저장될 Path
    * @param {number} arg._nOrientation - 회전 시킬 각도(EXIF_Orientation)값.(1, 2, 3, 4, 5, 6, 7, 8 )
    * @param {boolean} [arg._bMock=false] - Mock 데이터 사용 여부 (개발용)
    * @returns {Promise<{
@@ -483,8 +483,8 @@ export default class File {
    * 파일 압축해제
    * 
    * @param {Object} arg - 압축 해제 설정 객체
-   * @param {string} arg._sSourcePath - 소스 File Path.
-   * @param {string} arg._sDirectory - 압축 해제할 Directory Path.
+   * @param {string} arg._sSourcePath - 소스 File Path
+   * @param {string} arg._sDirectory - 압축 해제할 Directory Path
    * @param {boolean} [arg._bMock=false] - Mock 데이터 사용 여부 (개발용)
    * @returns {Promise<{
    *   result: boolean,    // 성공 여부
@@ -584,12 +584,12 @@ export default class File {
    * 파일 압축
    * 
    * @param {Object} arg - 파일 압축 설정 객체
-   * @param {string} arg._sSourcePath - 소스 File Path.
-   * @param {string} arg._sTargetPath - 결과 File Path.
+   * @param {string} arg._sSourcePath - 압축할 파일의 경로
+   * @param {string} arg._sTargetPath - 결과 파일의 경로
    * @param {boolean} [arg._bMock=false] - Mock 데이터 사용 여부 (개발용)
    * @returns {Promise<{
-   *   result: boolean,     // 파일 복사 성공 여부
-   *   file_path: string    // 복사된 파일의 경로
+   *   result: boolean,     // 파일 압축 성공 여부
+   *   file_path: string    // 압축된 파일의 경로
    * }>} 파일 압축 결과를 담은 Promise 객체
    * @see public/mock/bizMOB/File/zip.json - Mock 응답 데이터 예제
    * @example

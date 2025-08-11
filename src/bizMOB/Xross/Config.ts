@@ -46,7 +46,7 @@ export default class Config {
    * console.log(appNetworkConfig);
    *
    * // 웹 환경의 App 클래스 config 조회
-   * const webAppConfig = Config.get('WEB', 'APP');
+   * const webAppConfig = Config.get('WEB', 'App');
    * console.log(webAppConfig);
    */
   static get(target: string, className: string) {

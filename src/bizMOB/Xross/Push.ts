@@ -11,6 +11,7 @@ export default class Push {
    *   resultCode: string,     // 결과 코드
    *   resultMessage: string   // 결과 메시지
    * }>} 푸시 알람 조회 결과를 담은 Promise 객체
+   * @see public/mock/bizMOB/Push/getAlarm.json - Mock 응답 데이터 예제
    * @example
    * import { Push } from '@bizMOB';
    * // 현재 푸시 알람 설정 상태 확인
@@ -28,8 +29,8 @@ export default class Push {
    */
   static getAlarm(arg: {
     _sUserId: string, // 푸시 알림이 설정된 사용자 아이디
-    _bProgressEnable?: boolean, // 푸시 서버와 통신 중일때 화면에 progress 를 표시할지에 대한 여부
-    _bMock?: boolean, // Mock 데이터 사용 여부
+    _bProgressEnable?: boolean, // 푸시 서버와 통신 중일때 화면에 progress 를 표시할지에 대한 여부( true 또는 false )
+    _bMock?: boolean, // Mock 데이터 사용 여부 (개발용)
   }): Promise<Record<string, any>> {
     return new Promise(resolve => {
       window.bizMOB.Push.getAlarm({
@@ -56,6 +57,7 @@ export default class Push {
    *   resultCode: string,     // 결과 코드
    *   resultMessage: string   // 결과 메시지
    * }>} 푸시 수신 목록 조회 결과를 담은 Promise 객체
+   * @see public/mock/bizMOB/Push/getMessageList.json - Mock 응답 데이터 예제
    * @example
    * import { Push } from '@bizMOB';
    * // 최신 푸시 메시지 목록 조회 (첫 페이지, 20개)
@@ -74,7 +76,7 @@ export default class Push {
    * }
    */
   static getMessageList(arg: {
-    _sUserId: string, // 푸시 메세지를 가져올 사용자 이이디
+    _sUserId: string, // 푸시 메세지를 가져올 사용자 아이디
     _nPageIndex: number, // 푸시 메세지를 가져올 페이지 번호
     _nItemCount: number, // 해당 페이지에서 가져올 푸시 메세지 갯수
     _sAppName: string, // 푸시 메세지를 가져올 앱 이름
@@ -102,6 +104,7 @@ export default class Push {
    *   resultCode: string,     // 결과 코드
    *   resultMessage: string   // 결과 메시지
    * }>} 푸시키 정보 조회 결과를 담은 Promise 객체
+   * @see public/mock/bizMOB/Push/getPushKey.json - Mock 응답 데이터 예제
    * @example
    * import { Push } from '@bizMOB';
    * // 현재 디바이스의 푸시키 조회
@@ -139,13 +142,14 @@ export default class Push {
    * @param {Object} arg - 안읽은 개수 조회 설정 객체
    * @param {string} arg._sUserId - 푸시 메세지를 조회할 사용자 아이디.
    * @param {string} arg._sAppName - 푸시 서버에 등록된 앱 이름.
-   * @param {boolean} [arg._bProgressEnable=true] - (Default:true) 푸시 알람 설정 요청시 화면에 progress 표시 여부( true 또는 false )
+   * @param {boolean} [arg._bProgressEnable=true] - (Default:true) 푸시 서버와 통신 중일때 화면에 progress 를 표시할지에 대한 여부( true 또는 false )
    * @param {boolean} [arg._bMock=false] - Mock 데이터 사용 여부 (개발용)
    * @returns {Promise<{
    *   result: boolean,        // 성공 여부
    *   resultCode: string,     // 결과 코드
    *   resultMessage: string   // 결과 메시지
    * }>} 읽지 않은 푸시 메세지 조회 결과를 담은 Promise 객체
+   * @see public/mock/bizMOB/Push/getUnreadCount.json - Mock 응답 데이터 예제
    * @example
    * import { Push } from '@bizMOB';
    * // 기본 안읽은 개수 조회
@@ -156,8 +160,7 @@ export default class Push {
    * });
    *
    * if (unreadResult.result) {
-   *   const unreadCount = parseInt(unreadResult.resultMessage);
-   *   console.log('안읽은 메시지 개수:', unreadCount);
+   *   console.log('안읽은 개수 조회 성공:', unreadResult.resultCode);
    * } else {
    *   console.error('안읽은 개수 조회 실패:', unreadResult.resultCode);
    * }
@@ -185,13 +188,14 @@ export default class Push {
    * @param {string} arg._sTrxDay - 푸시 메세지를 읽은 날짜.(yyyymmdd)
    * @param {string} arg._sTrxId - 푸시 메세지 아이디.
    * @param {string} arg._sUserId - 사용자 아이디.
-   * @param {boolean} [arg._bProgressEnable=true] - (Default:true) 푸시 알람 설정 요청시 화면에 progress 표시 여부( true 또는 false )
+   * @param {boolean} [arg._bProgressEnable=true] - (Default:true) 푸시 서버와 통신 중일때  화면에 progress 표시 여부( true 또는 false )
    * @param {boolean} [arg._bMock=false] - Mock 데이터 사용 여부 (개발용)
    * @returns {Promise<{
    *   result: boolean,        // 성공 여부
    *   resultCode: string,     // 결과 코드
    *   resultMessage: string   // 결과 메시지
    * }>} 푸시 읽음 결과를 담은 Promise 객체
+   * @see public/mock/bizMOB/Push/readMessage.json - Mock 응답 데이터 예제
    * @example
    * import { Push } from '@bizMOB';
    * // 기본 메시지 읽음 처리
@@ -229,7 +233,7 @@ export default class Push {
   }
 
   /**
-   * 수신받은 푸시 메세지의 상세 정보를 조회합니다.
+   * 수신받은 푸시 메세지의 상세 정보를 조회
    * 
    * @param {Object} arg - 메시지 상세 조회 설정 객체
    * @param {string} arg._sUserId - 사용자 아이디.
@@ -256,6 +260,7 @@ export default class Push {
    *     trxDate: string             // 푸시발송을 등록한 시간
    *   }
    * }>}
+   * @see public/mock/bizMOB/Push/readReceiptMessage.json - Mock 응답 데이터 예제
    * @example
    * import { Push } from '@bizMOB';
    * // 기본 메시지 상세 조회
@@ -301,6 +306,7 @@ export default class Push {
    *   resultCode: string,     // 결과 코드
    *   resultMessage: string   // 결과 메시지
    * }>} 푸시 서버 등록 결과를 담은 Promise 객체
+   * @see public/mock/bizMOB/Push/registerToServer.json - Mock 응답 데이터 예제
    * @example
    * import { Push } from '@bizMOB';
    * const regResult = await Push.registerToServer({
@@ -340,6 +346,7 @@ export default class Push {
    * @returns {Promise<{
    *   result: boolean,        // 성공 여부
    * }>} 푸시 정보 리셋 결과를 담은 Promise 객체
+   * @see public/mock/bizMOB/Push/reset.json - Mock 응답 데이터 예제
    * @example
    * import { Push } from '@bizMOB';
    * const resetResult = await Push.reset();
@@ -375,13 +382,14 @@ export default class Push {
    * @param {Boolean} arg._bToAll (Default : false) 해당 앱을 사용하는 전체 사용자에게 푸시 메세지를 발송할지 여부.
    * @param {String} arg._sCategory (Default : def) 푸시 메세지 카테고리.
    * @param {Object} arg._oPayLoad 푸시 기폰 용량 초과시 전달할 메세지.
-   * @param {boolean} [arg._bProgressEnable=true] - (Default:true) 푸시 알람 설정 요청시 화면에 progress 표시 여부( true 또는 false )
+   * @param {boolean} [arg._bProgressEnable=true] - (Default:true) 푸시 서버와 통신 중일때  화면에 progress 표시 여부( true 또는 false )
    * @param {boolean} [arg._bMock=false] - Mock 데이터 사용 여부 (개발용)
    * @returns {Promise<{
    *   result: boolean,        // 성공 여부
    *   resultCode: string,     // 결과 코드
    *   resultMessage: string   // 결과 메시지
-   * }>} 푸시 서버 등록 결과를 담은 Promise 객체
+   * }>} 푸시 메세지 전송 결과를 담은 Promise 객체
+   * @see public/mock/bizMOB/Push/sendMessage.json - Mock 응답 데이터 예제
    * @example
    * import { Push } from '@bizMOB';
    * const sendResult = await Push.sendMessage({
@@ -431,7 +439,7 @@ export default class Push {
    * 푸시 알람을 설정합니다. 
    * 
    * @param {Object} arg - 푸시 알람 설정 객체
-   * @param {String} arg._sUserId 푸시 알림 설정을 등록할 사용자 이이디.
+   * @param {String} arg._sUserId 푸시 알림 설정을 등록할 사용자 아이디.
    * @param {Boolean} arg._bEnabled  (Default : true) 알람 수신 여부 설정 ( true 또는 false )
    * @param {Boolean} arg._bProgressEnable  (Default:true) 푸시 알람 설정 요청시 화면에 progress 표시 여부( true 또는 false )
    * @param {boolean} [arg._bMock=false] - Mock 데이터 사용 여부 (개발용)
@@ -439,7 +447,8 @@ export default class Push {
    *   result: boolean,        // 성공 여부
    *   resultCode: string,     // 결과 코드
    *   resultMessage: string   // 결과 메시지
-   * }>} 푸시 알람 수신 여부 결과를 담은 Promise 객체
+   * }>} 푸시 알람 설정 결과를 담은 Promise 객체
+   * @see public/mock/bizMOB/Push/setAlarm.json - Mock 응답 데이터 예제
    * @example
    * import { Push } from '@bizMOB';
    * const setAlarmResult = await Push.setAlarm({
@@ -455,7 +464,7 @@ export default class Push {
    * 
    * */
   static setAlarm(arg: {
-    _sUserId: string, // 푸시 알람을 설정할 사용자 이이디
+    _sUserId: string, // 푸시 알람을 설정할 사용자 아이디
     _bEnabled: boolean, // 알람 설정 값입니다. true와 false로 설정이 가능
     _bProgressEnable?: boolean, // 푸시 서버와 통신 중일때 화면에 progress 를 표시할지에 대한 여부
     _bMock?: boolean, // Mock 데이터 사용 여부
@@ -474,14 +483,15 @@ export default class Push {
    * 앱 아이콘에 숫자 표시하기 
    * 
    * @param {Object} arg - 뱃지 설정 객체
-   * @param {Number} arg._nBadgeCount 뱃지에 표시할 값 .( 양수 : 표시할 갯수 ,  0 : 뱃지카운트 초기화 )
+   * @param {Number} arg._nBadgeCount 뱃지에 표시할 값(양수 : 표시할 갯수, 0 : 뱃지카운트 초기화)
    * @param {boolean} [arg._bMock=false] - Mock 데이터 사용 여부 (개발용)
    * @returns {Promise<{
    *   result: boolean,        // 성공 여부
-   * }>} 푸시 정보 리셋 결과를 담은 Promise 객체
+   * }>} 뱃지 설정 결과를 담은 Promise 객체
+   * @see public/mock/bizMOB/Push/setBadgeCount.json - Mock 응답 데이터 예제
    * @example
    * import { Push } from '@bizMOB';
-   * const setBadgeResult = await Push.setBadgeResult({
+   * const setBadgeResult = await Push.setBadgeCount({
    *   _nBadgeCount: 5
    * })
    * if (setBadgeResult.result) {
